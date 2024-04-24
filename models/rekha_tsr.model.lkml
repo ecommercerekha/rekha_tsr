@@ -118,10 +118,10 @@ explore: order_items {
   }
 
   query: user_count_by_month {
-    description: "Number of users by month in 2023"
+    description: "Number of users by month in 2024"
     dimensions: [users.created_month]
     measures: [users.count]
-    filters: [users.created_date: "2023"]
+    filters: [users.created_date: "2024"]
   }
 
   join: inventory_items {
