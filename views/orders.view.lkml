@@ -7,6 +7,10 @@ view: orders {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
@@ -30,18 +34,6 @@ view: orders {
       label: "Status Count"
       url: "https://www.google.com/search?q={{ status._value }}"
     }
-  }
-  dimension: id {
-    type: number
-    sql: ${TABLE}.id ;;
-    html:
-    {% if value > 10 %}
-      <font color:"darkgreen">{{ id._rendered_value }}</font>
-    {% elsif value > 11 %}
-      <font color:"goldenrod">{{ id._rendered_value }}</font>
-    {% else %}
-      <font color:"darkred">{{ id._rendered_value }}</font>
-    {% endif %} ;;
   }
 
   # ----- Sets of fields for drilling ------
