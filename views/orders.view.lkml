@@ -22,9 +22,8 @@ view: orders {
   }
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [id, orders.id, inventory_items.id]
   }
-
   measure: count_without_liquid {
     type: count
   }
