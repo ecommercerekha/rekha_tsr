@@ -35,8 +35,25 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
-  measure: count {
-    type: count
-    drill_fields: [id, item_name, inventory_items.count]
-  }
+measure: count_conditional {
+  type: count
+  html:
+    {% if orders.status._value == "complete" %}
+      <p style="color:green"> {{ rendered_value }}</p>
+    {% else %}
+      <p style="color:blue"> {{ rendered_value }}</p>
+    {% endif %}
+    ;;
+}
+
+measure: count_conditional_correct {
+  type: count
+  html:
+    {% if orders.status._value == "complete" %}
+      <p style="color:green"> {{ rendered_value }}</p>
+    {% else %}
+      <p style="color:blue"> {{ rendered_value }}</p>
+    {% endif %}
+    ;;
+}
 }
