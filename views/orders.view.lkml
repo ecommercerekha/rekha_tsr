@@ -24,6 +24,7 @@ view: orders {
     type: count
     drill_fields: [detail*]
   }
+
   measure: count_without_liquid {
     type: count
   }
