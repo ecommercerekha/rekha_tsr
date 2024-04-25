@@ -10,6 +10,7 @@ view: users {
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
+    hidden: yes
   }
   dimension: city {
     type: string
@@ -23,6 +24,7 @@ view: users {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+    hidden: yes
   }
   dimension_group: created {
     type: time
