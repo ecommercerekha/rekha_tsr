@@ -8,6 +8,7 @@ view: orders {
     sql: ${TABLE}.created_at ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -22,7 +23,7 @@ view: orders {
   }
   measure: count {
     type: count
-    drill_fields: [id, orders.id, inventory_items.id]
+    drill_fields: [detail*]
   }
   measure: count_without_liquid {
     type: count

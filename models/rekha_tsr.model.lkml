@@ -117,12 +117,12 @@ explore: order_items {
     relationship: many_to_one
   }
 
-  query: user_count_by_month {
-    description: "Number of users by month in 2024"
-    dimensions: [users.created_month]
-    measures: [users.count]
-    filters: [users.created_date: "2024"]
-  }
+  # query: user_count_by_month {
+  #   description: "Number of users by month in 2024"
+  #   dimensions: [users.created_month]
+  #   measures: [users.count]
+  #   filters: [users.created_date: "2024"]
+  # }
 
   join: inventory_items {
     type: left_outer
