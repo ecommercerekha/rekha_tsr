@@ -35,6 +35,10 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+  measure: count {
+    type: count
+    drill_fields: [id, item_name, inventory_items.count]
+  }
 measure: count_conditional {
   type: count
   html:
