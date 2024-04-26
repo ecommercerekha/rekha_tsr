@@ -108,6 +108,9 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+    always_filter: {
+      filters: [created_date: "7 days"]
+    }
 }
 
 explore: order_items {
@@ -286,5 +289,8 @@ explore: users {
   access_filter: {
     field: users.city
     user_attribute: access_filter
+    }
+    # always_filter: {
+    #   filters: [city: "Los Angeles"]
+    # }
   }
-}
