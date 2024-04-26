@@ -233,7 +233,6 @@ explore: test {}
 
 explore: test_space_in_column_name {}
 
-explore: users {}
 
 explore: user_data {
   join: users {
@@ -282,3 +281,10 @@ explore: xss_test_8 {}
 explore: xss_test_9 {}
 
 explore: rekha {}
+
+explore: users {
+  access_filter: {
+    field: users.city
+    user_attribute: access_filter
+  }
+}
