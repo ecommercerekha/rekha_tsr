@@ -109,7 +109,7 @@ explore: orders {
     relationship: many_to_one
   }
     always_filter: {
-      filters: [created_date: "7 days"]
+      filters: [created_date: "5 year"]
     }
 }
 
